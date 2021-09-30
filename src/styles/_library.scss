@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+}
+h3,
+h4 {
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+}
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22rem;
+  height: 100%;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 50px rgb(204, 204, 204);
+  overflow: scroll;
+  padding: 2rem 1rem;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
+  .library-songs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .library-song {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      transition: bac;
+      img {
+        width: 30%;
+        height: 30%;
+      }
+      &:hover {
+        background: rgb(197, 203, 243);
+      }
+      .song-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0.4rem;
+        h3 {
+          font-size: 1rem;
+        }
+        h4 {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparents;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.5) transparents;
+  border-radius: 20px;
+  border: transparent;
+}
+
+.selected {
+  background: rgb(152, 163, 231);
+}
+
+.active-library {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
